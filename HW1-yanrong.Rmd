@@ -135,7 +135,7 @@ coeftest(model_2, vcov. = vcovHC, type="HC1") -> model_2_coeftest
 model_2_coeftest
 ```
 <table><tr><td bgcolor=#F5F5DC>
-由此可知，$\beta_{0}=0.252055$，$\beta_{1}=0.068024$，$\beta_{2}=0.096260$
+由此可知，$\beta_{0}=0.252055$，$\beta_{1}=0.068024$，$\beta_{2}=0.096260$。
 </td></tr></table>
 
 ## 1.7 變數關連
