@@ -9,8 +9,8 @@ output:
       collapsed: true
       smooth_scroll: false
 params:
-  name: ["阿花","阿明"]
-  id: [710761001,710661002]
+  name: ["林奕翔","張鈞硯","賴彥融","吳宥履","王童緯"]
+  id: [710761132,710761104,710761101,710761118,710761115]
   group: "team1"
   url: ""
 ---
