@@ -658,7 +658,16 @@ F Statistic
 <table>
 <tr>
 <td bgcolor="#F5F5DC">
-<span class="math display">\[\hat{\beta}_1=\frac{\sum_{i=1}^N (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^N (x_i-\bar{x})^2}=\frac{\sum_{i,x_i=1}^N (1-\frac{n_1}{n})(y_i-\bar{y})+\sum_{i,x_i=0}^N (0-\frac{n_1}{n})(y_i-\bar{y})}{\sum_{i,x_i=1}^N (1-\frac{n_1}{n})^2+\sum_{i,x_i=0}^N (0-\frac{n_1}{n})^2}\]</span>   <span class="math display">\[=\frac{(\frac{n_0}{n})\sum_{i,x_i=1}^N(y_i-\bar{y})+(\frac{n_1}{n})\sum_{i,x_i=0}^N(y_i-\bar{y})}{n_1(\frac{n_0}{n})^2+n_0(\frac{n_1}{n})^2}=\frac{(\frac{n_0}{n})\sum_{i,x_i=1}^N y_i-(\frac{n_1}{n})\sum_{i,x_i=0}^N y_i}{\frac{n_1 n_0^2+n_0 n_1^2}{n^2}}\]</span>   <span class="math display">\[=\frac{(\frac{\sum_{i,x_i=1}^N y_i}{n_1})+(\frac{\sum_{i,x_i=0}^N y_i}{n_0})}{\frac{n_0+ n_1}{n}}=\bar{y_1}+\bar{y_2}\]</span>
+<span class="math display">\[\begin{equation}
+\begin{aligned}
+\hat{\beta}_1
+&amp;=\frac{\sum_{i=1}^N (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^N (x_i-\bar{x})^2}=\frac{\sum_{i,x_i=1}^N (1-\frac{n_1}{n})(y_i-\bar{y})+\sum_{i,x_i=0}^N (0-\frac{n_1}{n})(y_i-\bar{y})}{\sum_{i,x_i=1}^N (1-\frac{n_1}{n})^2+\sum_{i,x_i=0}^N (0-\frac{n_1}{n})^2}\\
+
+&amp;=\frac{(\frac{n_0}{n})\sum_{i,x_i=1}^N(y_i-\bar{y})+(\frac{n_1}{n})\sum_{i,x_i=0}^N(y_i-\bar{y})}{n_1(\frac{n_0}{n})^2+n_0(\frac{n_1}{n})^2}=\frac{(\frac{n_0}{n})\sum_{i,x_i=1}^N y_i-(\frac{n_1}{n})\sum_{i,x_i=0}^N y_i}{\frac{n_1 n_0^2+n_0 n_1^2}{n^2}}\\
+
+&amp;=\frac{(\frac{\sum_{i,x_i=1}^N y_i}{n_1})-(\frac{\sum_{i,x_i=0}^N y_i}{n_0})}{\frac{n_0+ n_1}{n}}=\bar{y_1}-\bar{y_0}
+\end{aligned}
+\end{equation}\]</span>
 </td>
 </tr>
 </table>
@@ -671,6 +680,18 @@ F Statistic
 <li><p>若條件在已知已知每個觀測值的<span class="math inline">\(x_i\)</span>為1或0下<span class="math inline">\(V(\epsilon_i|x_i)=\sigma^2\)</span>（即齊質變異），則條件變異數<span class="math inline">\(V(\hat{\beta}_1|X)=\frac{n}{n_1 n_0}\sigma^2\)</span>。</p></li>
 <li><p>若考慮異質變異<span class="math inline">\(V(\epsilon_i|x_i)=\sigma_i^2\)</span>，則條件變異數<span class="math inline">\(V(\hat{\beta}_1|X)=\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}\)</span>。</p></li>
 </ol>
+<table>
+<tr>
+<td bgcolor="#F5F5DC">
+<span class="math display">\[\begin{equation}
+\begin{aligned}
+E(\hat{\beta_1})&amp;=E(\bar{y_1}-\bar{y_0})=E(\bar{y_1})-E(\bar{y_0})=E(\frac{\sum_{i,x_i=1}^Ny_i}{n_1})-E(\frac{\sum_{i,x_i=0}^Ny_i}{n_0})\\
+&amp;=(\frac{1}{n_1})\sum_{i,x_i=1}^N E(y_1)-(\frac{1}{n_0})\sum_{i,x_i=0}^N E(y_0)=(\beta_0+\beta_1)-\beta_0\\&amp;=\beta_1
+\end{aligned}
+\end{equation}\]</span>
+</td>
+</tr>
+</table>
 </div>
 <div class="section level2">
 <h2>2.3 三明治表示式</h2>
