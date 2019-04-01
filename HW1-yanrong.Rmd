@@ -170,6 +170,8 @@ stargazer(model_1, model_2,
 ## 1.9 (Optional, 可不寫)
 
 從前面的論述你發現什麼？背後的效應反映出什麼課程結構或學生學習問題？你會怎麼延伸研究下去。
+
+
 <table><tr><td bgcolor=#F5F5DC>
 曾被擋修的學生之個經PR值平均仍然低於沒被擋修過的學生PR值平均，顯示即使跨過擋修門檻後再去修個經，成績也不太會有所提升，因此擋修這個制度對學生的學習效果並沒有太大的幫助，成績的差異來源並不是是否修過經原，而是來自學生自身的能力和家庭背景及花在該門課程上的時間，因此若要延伸研究，我們會想以家庭所得和讀書時間做為解釋變數，去試著解釋不同學生在個經成績上的差異。
 </td></tr></table>
@@ -205,9 +207,9 @@ $$\hat{\beta}_1=\bar{y}_1-\bar{y}_0,$$
 \begin{aligned}
 \hat{\beta}_1
 &=\frac{\sum_{i=1}^N (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^N (x_i-\bar{x})^2}=\frac{\sum_{i,x_i=1}^N (1-\frac{n_1}{n})(y_i-\bar{y})+\sum_{i,x_i=0}^N (0-\frac{n_1}{n})(y_i-\bar{y})}{\sum_{i,x_i=1}^N (1-\frac{n_1}{n})^2+\sum_{i,x_i=0}^N (0-\frac{n_1}{n})^2}\\
-
+\\
 &=\frac{(\frac{n_0}{n})\sum_{i,x_i=1}^N(y_i-\bar{y})+(\frac{n_1}{n})\sum_{i,x_i=0}^N(y_i-\bar{y})}{n_1(\frac{n_0}{n})^2+n_0(\frac{n_1}{n})^2}=\frac{(\frac{n_0}{n})\sum_{i,x_i=1}^N y_i-(\frac{n_1}{n})\sum_{i,x_i=0}^N y_i}{\frac{n_1 n_0^2+n_0 n_1^2}{n^2}}\\
-
+\\
 &=\frac{(\frac{\sum_{i,x_i=1}^N y_i}{n_1})-(\frac{\sum_{i,x_i=0}^N y_i}{n_0})}{\frac{n_0+ n_1}{n}}=\bar{y_1}-\bar{y_0}
 \end{aligned}
 \end{equation}
@@ -224,15 +226,35 @@ $$\hat{\beta}_1=\bar{y}_1-\bar{y}_0,$$
   (c) 若考慮異質變異$V(\epsilon_i|x_i)=\sigma_i^2$，則條件變異數$V(\hat{\beta}_1|X)=\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}$。
 
 <table><tr><td bgcolor=#F5F5DC>
-\begin{equation}
+
 \begin{aligned}
-E(\hat{\beta_1})&=E(\bar{y_1}-\bar{y_0})=E(\bar{y_1})-E(\bar{y_0})=E(\frac{\sum_{i,x_i=1}^Ny_i}{n_1})-E(\frac{\sum_{i,x_i=0}^Ny_i}{n_0})\\
-&=(\frac{1}{n_1})\sum_{i,x_i=1}^N E(y_1)-(\frac{1}{n_0})\sum_{i,x_i=0}^N E(y_0)=(\beta_0+\beta_1)-\beta_0\\&=\beta_1
+(a)\,\,\,\,\,\,E(\hat{\beta_1})&=E(\bar{y_1}-\bar{y_0})=E(\bar{y_1})-E(\bar{y_0})=E(\frac{\sum_{i,x_i=1}^Ny_i}{n_1})-E(\frac{\sum_{i,x_i=0}^Ny_i}{n_0})\\
+\\
+&=(\frac{1}{n_1})\sum_{i,x_i=1}^N E(y_1)-(\frac{1}{n_0})\sum_{i,x_i=0}^N E(y_0)=(\beta_0+\beta_1)-\beta_0=\beta_1\\
+\\
+(b)\,\,V(\hat{\beta_1}|x)&=V(\bar{y_1}-\bar{y_0}|x)=V(\bar{y_1})+V(\bar{y_2})-2cov(\bar{y_1},\bar{y_2})\\
+\\
+&=(\frac{1}{n_1^2})n_1\sigma^2+(\frac{1}{n_0^2})n_0\sigma^2=\frac{n}{n_1+n_2}\sigma^2\\
+\\
+(c)\,\,V(\hat{\beta_1}|x)&=V(\bar{y_1}-\bar{y_0}|x)=V(\bar{y_1})+V(\bar{y_2})-2cov(\bar{y_1},\bar{y_2})\\
+\\
+&=\frac{\sigma_1^2}{n_1}+\frac{\sigma_0^2}{n_0}
 \end{aligned}
-\end{equation}
 </td></tr></table>
 
 ## 2.3 三明治表示式
 線性迴歸模型
 $Y=X\beta+\epsilon$
 的OLS估計式$\hat{\beta}=(X'X)^{-1}(X'Y)$。條件在已知$X$下，令$V(\epsilon|X)=\Sigma$。請證明$V(\hat{\beta}|X)=(X'X)^{-1}\Sigma (X'X)$，具有三明治形式（即可表示成$BMB'$的矩陣相乘形式）。
+
+&nbsp;
+
+<table><tr><td bgcolor=#F5F5DC>
+\begin{aligned}
+Var(\epsilon)&=E(\epsilon\epsilon')=\sigma^2I_n=\sum\\
+\\
+Var(\hat{\beta})&=E\{[\hat{\beta}-E(\hat{\beta})][\hat{\beta}-E(\hat{\beta})]\}=(x'x)^{-1}x'E(\epsilon\epsilon')x(x'x)^{-1}\\
+\\
+&=(x'x)^{-1}x'\sum\,(x'x)^{-1}
+\end{aligned}
+</td></tr></table>
