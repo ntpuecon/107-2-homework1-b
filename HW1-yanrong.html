@@ -407,7 +407,7 @@ model_2_coeftest</code></pre>
 <table>
 <tr>
 <td bgcolor="#F5F5DC">
-由此可知，<span class="math inline">\(\beta_{0}=0.252055\)</span>，<span class="math inline">\(\beta_{1}=0.068024\)</span>，<span class="math inline">\(\beta_{2}=0.096260\)</span>
+由此可知，<span class="math inline">\(\beta_{0}=0.252055\)</span>，<span class="math inline">\(\beta_{1}=0.068024\)</span>，<span class="math inline">\(\beta_{2}=0.096260\)</span>。
 </td>
 </tr>
 </table>
@@ -665,16 +665,14 @@ F Statistic
 <table>
 <tr>
 <td bgcolor="#F5F5DC">
-<span class="math display">\[\begin{equation}
-\begin{aligned}
+<span class="math display">\[\begin{align}
 \hat{\beta}_1
 &amp;=\frac{\sum_{i=1}^N (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^N (x_i-\bar{x})^2}=\frac{\sum_{i,x_i=1}^N (1-\frac{n_1}{n})(y_i-\bar{y})+\sum_{i,x_i=0}^N (0-\frac{n_1}{n})(y_i-\bar{y})}{\sum_{i,x_i=1}^N (1-\frac{n_1}{n})^2+\sum_{i,x_i=0}^N (0-\frac{n_1}{n})^2}\\
 \\
 &amp;=\frac{(\frac{n_0}{n})\sum_{i,x_i=1}^N(y_i-\bar{y})+(\frac{n_1}{n})\sum_{i,x_i=0}^N(y_i-\bar{y})}{n_1(\frac{n_0}{n})^2+n_0(\frac{n_1}{n})^2}=\frac{(\frac{n_0}{n})\sum_{i,x_i=1}^N y_i-(\frac{n_1}{n})\sum_{i,x_i=0}^N y_i}{\frac{n_1 n_0^2+n_0 n_1^2}{n^2}}\\
 \\
 &amp;=\frac{(\frac{\sum_{i,x_i=1}^N y_i}{n_1})-(\frac{\sum_{i,x_i=0}^N y_i}{n_0})}{\frac{n_0+ n_1}{n}}=\bar{y_1}-\bar{y_0}
-\end{aligned}
-\end{equation}\]</span>
+\end{align}\]</span>
 </td>
 </tr>
 </table>
@@ -690,19 +688,19 @@ F Statistic
 <table>
 <tr>
 <td bgcolor="#F5F5DC">
-<span class="math display">\[\begin{aligned}
+<span class="math display">\[\begin{align}
 (a)\,\,\,\,\,\,E(\hat{\beta_1})&amp;=E(\bar{y_1}-\bar{y_0})=E(\bar{y_1})-E(\bar{y_0})=E(\frac{\sum_{i,x_i=1}^Ny_i}{n_1})-E(\frac{\sum_{i,x_i=0}^Ny_i}{n_0})\\
 \\
 &amp;=(\frac{1}{n_1})\sum_{i,x_i=1}^N E(y_1)-(\frac{1}{n_0})\sum_{i,x_i=0}^N E(y_0)=(\beta_0+\beta_1)-\beta_0=\beta_1\\
 \\
-(b)\,\,V(\hat{\beta_1}|x)&amp;=V(\bar{y_1}-\bar{y_0}|x)=V(\bar{y_1})+V(\bar{y_2})-2cov(\bar{y_1},\bar{y_2})\\
+(b)\,\,V(\hat{\beta_1}|x)&amp;=V(\bar{y_1}-\bar{y_0}|\,x)=V(\bar{y_1})+V(\bar{y_0})-2cov(\bar{y_1},\bar{y_0}),\,cov(\bar{y_1},\bar{y_0})=0 \\
 \\
-&amp;=(\frac{1}{n_1^2})n_1\sigma^2+(\frac{1}{n_0^2})n_0\sigma^2=\frac{n}{n_1+n_2}\sigma^2\\
+&amp;=(\frac{1}{n_1^2})n_1\sigma^2+(\frac{1}{n_0^2})n_0\sigma^2=\frac{n}{n_1n_2}\sigma^2\\
 \\
 (c)\,\,V(\hat{\beta_1}|x)&amp;=V(\bar{y_1}-\bar{y_0}|x)=V(\bar{y_1})+V(\bar{y_2})-2cov(\bar{y_1},\bar{y_2})\\
 \\
 &amp;=\frac{\sigma_1^2}{n_1}+\frac{\sigma_0^2}{n_0}
-\end{aligned}\]</span>
+\end{align}\]</span>
 </td>
 </tr>
 </table>
@@ -714,13 +712,13 @@ F Statistic
 <table>
 <tr>
 <td bgcolor="#F5F5DC">
-<span class="math display">\[\begin{aligned}
+<span class="math display">\[\begin{align}
 Var(\epsilon)&amp;=E(\epsilon\epsilon')=\sigma^2I_n=\sum\\
 \\
 Var(\hat{\beta})&amp;=E\{[\hat{\beta}-E(\hat{\beta})][\hat{\beta}-E(\hat{\beta})]\}=(x'x)^{-1}x'E(\epsilon\epsilon')x(x'x)^{-1}\\
 \\
-&amp;=(x'x)^{-1}x'\sum\,(x'x)^{-1}
-\end{aligned}\]</span>
+&amp;=(x'x)^{-1}x'\sum\,x(x'x)^{-1}
+\end{align}\]</span>
 </td>
 </tr>
 </table>
