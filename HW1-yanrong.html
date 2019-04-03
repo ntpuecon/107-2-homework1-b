@@ -323,7 +323,7 @@ div.tocify {
 <tr>
 <td bgcolor="#F5F5DC">
 <p><span class="math display">\[PR_{k}=PR_{0k}+(PR_{1k}-PR_{0k}) T_{k}\]</span> k泛指任何人，上式表示每一個沒有被的擋修的人（即T=1)，他的實際成績是他的「被擋修的成績」再加上「沒有被擋修的效果」所造成。</p>
-令<span class="math inline">\(\delta_{k}=PR_{1k}-PR_{0k}\)</span>代表每個人有沒有被擋修的成績效果， 假設每個人沒有被擋修的效果相同<span class="math inline">\(\delta_{k}=\delta\)</span>,則： <span class="math display">\[PR_{k}=PR_{0k}-\delta T_{k}\]</span>
+令<span class="math inline">\(\delta_{k}=PR_{1k}-PR_{0k}\)</span>代表每個人有沒有被擋修的成績效果，假設每個人沒有被擋修的效果相同<span class="math inline">\(\delta_{k}=\delta\)</span>則： <span class="math display">\[PR_{k}=PR_{0k}-\delta T_{k}\]</span>
 </td>
 </tr>
 </table>
@@ -693,9 +693,9 @@ F Statistic
 \\
 &amp;=(\frac{1}{n_1})\sum_{i,x_i=1}^N E(y_1)-(\frac{1}{n_0})\sum_{i,x_i=0}^N E(y_0)=(\beta_0+\beta_1)-\beta_0=\beta_1\\
 \\
-(b)\,\,V(\hat{\beta_1}|x)&amp;=V(\bar{y_1}-\bar{y_0}|\,x)=V(\bar{y_1})+V(\bar{y_0})-2cov(\bar{y_1},\bar{y_0}),\,cov(\bar{y_1},\bar{y_0})=0 \\
+(b)\,\,V(\hat{\beta_1}|x)&amp;=V(\bar{y_1}-\bar{y_0}|x)=V(\bar{y_1})+V(\bar{y_0})-2cov(\bar{y_1},\bar{y_0}),\,cov(\bar{y_1},\bar{y_0})=0 \\
 \\
-&amp;=(\frac{1}{n_1^2})n_1\sigma^2+(\frac{1}{n_0^2})n_0\sigma^2=\frac{n}{n_1n_2}\sigma^2\\
+&amp;=(\frac{1}{n_1^2})n_1\sigma^2+(\frac{1}{n_0^2})n_0\sigma^2=\frac{n}{n_1n_0}\sigma^2\\
 \\
 (c)\,\,V(\hat{\beta_1}|x)&amp;=V(\bar{y_1}-\bar{y_0}|x)=V(\bar{y_1})+V(\bar{y_2})-2cov(\bar{y_1},\bar{y_2})\\
 \\
